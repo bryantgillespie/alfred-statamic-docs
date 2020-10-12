@@ -32,7 +32,7 @@ if (empty($results)) {
             ->arg("https://www.google.com/search?q=statamic+{$query}")
             ->quicklookurl("https://www.google.com/search?q=statamic+{$query}")
             ->valid(true);
-    
+
         echo $workflow->output();
         exit;
     }
