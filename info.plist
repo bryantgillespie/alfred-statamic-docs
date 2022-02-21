@@ -4,8 +4,6 @@
 <dict>
 	<key>bundleid</key>
 	<string>com.bryantgillespie.statamic-docs</string>
-	<key>category</key>
-	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
 		<key>1A488F07-3D12-43FD-9966-DD9D185121C7</key>
@@ -78,7 +76,7 @@
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
-				<integer>102</integer>
+				<integer>111</integer>
 				<key>keyword</key>
 				<string>st</string>
 				<key>queuedelaycustom</key>
@@ -92,7 +90,13 @@
 				<key>runningsubtext</key>
 				<string>Searching docs for "{query}"...</string>
 				<key>script</key>
-				<string>php statamicV3.php "{query}"</string>
+				<string>if [ -f "/opt/homebrew/bin/php" ]; then
+    /opt/homebrew/bin/php statamic.php "{query}"
+elif [ -f "/usr/local/bin/php" ]; then
+    /usr/local/bin/php statamic.php "{query}"
+elif [ -f "/usr/bin/php" ]; then
+    /usr/bin/php statamic.php "{query}"
+fi</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -146,9 +150,9 @@
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
-				<integer>102</integer>
+				<integer>111</integer>
 				<key>keyword</key>
-				<string>v2</string>
+				<string>st2</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -160,7 +164,13 @@
 				<key>runningsubtext</key>
 				<string>Searching docs for "{query}"...</string>
 				<key>script</key>
-				<string>php statamicV2.php "{query}"</string>
+				<string>if [ -f "/opt/homebrew/bin/php" ]; then
+    /opt/homebrew/bin/php v2_statamic.php "{query}"
+elif [ -f "/usr/local/bin/php" ]; then
+    /usr/local/bin/php v2_statamic.php "{query}"
+elif [ -f "/usr/bin/php" ]; then
+    /usr/bin/php v2_statamic.php "{query}"
+fi</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -170,7 +180,7 @@
 				<key>title</key>
 				<string>Statamic</string>
 				<key>type</key>
-				<integer>0</integer>
+				<integer>5</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -218,7 +228,7 @@
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>2.0</string>
+	<string>3.0</string>
 	<key>webaddress</key>
 	<string>https://www.bryantgillespie.com</string>
 </dict>
