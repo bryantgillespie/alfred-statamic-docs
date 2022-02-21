@@ -4,45 +4,60 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitb223f0805bda9cf3924ad469a2f0aa1a
+class ComposerStaticInit40e6055e422119cdab28e7462df6d997
 {
+    public static $files = array (
+        '979dffec6fa5205cabd2c2cd1e9e6b3a' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/Http/Psr7/functions.php',
+        '6783aef8c489bbc166eee2536fe605d5' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/functions.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
+        'P' => 
+        array (
+            'Psr\\SimpleCache\\' => 16,
+            'Psr\\Log\\' => 8,
+            'Psr\\Http\\Message\\' => 17,
+        ),
         'A' => 
         array (
+            'Algolia\\AlgoliaSearch\\' => 22,
             'Alfred\\Workflows\\' => 17,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'Psr\\SimpleCache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/simple-cache/src',
+        ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
+        'Psr\\Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
+        'Algolia\\AlgoliaSearch\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src',
+        ),
         'Alfred\\Workflows\\' => 
         array (
             0 => __DIR__ . '/..' . '/joetannenbaum/alfred-workflow/src',
         ),
     );
 
-    public static $prefixesPsr0 = array (
-        'P' => 
-        array (
-            'Parsedown' => 
-            array (
-                0 => __DIR__ . '/..' . '/erusev/parsedown',
-            ),
-        ),
-        'A' => 
-        array (
-            'AlgoliaSearch' => 
-            array (
-                0 => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src',
-            ),
-        ),
+    public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitb223f0805bda9cf3924ad469a2f0aa1a::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitb223f0805bda9cf3924ad469a2f0aa1a::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitb223f0805bda9cf3924ad469a2f0aa1a::$prefixesPsr0;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit40e6055e422119cdab28e7462df6d997::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit40e6055e422119cdab28e7462df6d997::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit40e6055e422119cdab28e7462df6d997::$classMap;
 
         }, null, ClassLoader::class);
     }
